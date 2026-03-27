@@ -3,6 +3,7 @@ import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 import Button from "./Button";
 import { memo } from "react";
+import AnimatedHeroName from "./ui/animated-hero-name";
 
 const Hero = memo(() => {
   const [text] = useTypewriter({
@@ -35,9 +36,9 @@ const Hero = memo(() => {
 
         <h1
           className="font-outfit font-bold text-4xl sm:text-5xl md:text-6xl 
-          lg:text-7xl xl:text-8xl tracking-tight"
+          lg:text-7xl xl:text-8xl tracking-tight flex flex-wrap items-end gap-2 sm:gap-3"
         >
-          Triumph Anya-Nga{" "}
+          <AnimatedHeroName firstName="Triumph" lastName="Anya-Nga" />
           <span
             className="text-sm sm:text-base md:text-lg lg:text-xl 
           font-medium text-gray-600"
@@ -52,7 +53,7 @@ const Hero = memo(() => {
         >
           <h2 className="inline-flex items-center">
             {text}
-            <Cursor cursorColor="#0077b5" />
+            <Cursor cursorColor="#0F172A" />
           </h2>
         </div>
 

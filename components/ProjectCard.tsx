@@ -18,14 +18,14 @@ const ProjectCard = ({ project }: { project: Project }) => {
       key={project.projectName}
       className="flex flex-col bg-slate-100 rounded-2xl border overflow-hidden transition-all duration-300"
     >
-      <div className="relative w-full h-full  group">
+      <div className="relative w-full aspect-[16/9] group overflow-hidden">
         <Image
           src={project.projectImage}
           alt={project.projectName}
-          height={300}
-          width={600}
+          fill
           loading={"lazy"}
-          className="object-contain rounded-t-2xl border-b  transition-all duration-300 group-hover:brightness-50"
+          sizes="(max-width: 768px) 100vw, 600px"
+          className="object-cover object-center rounded-t-2xl border-b transition-all duration-300 group-hover:brightness-50"
         />
         <div className="absolute inset-x-0  bottom-10 flex items-center text-sm justify-center gap-4 z-10 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out">
           <Link

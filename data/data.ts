@@ -2,8 +2,19 @@ import { JobExperience, Project } from "@/types/types";
 
 export const experiences: JobExperience[] = [
   {
-    occupation: "Frontend Engineer",
-    companyName: "Spark LLC",
+    occupation: "Freelance Fullstack Engineer",
+    companyName: "ODS",
+    dateStart: "02/2022",
+    dateEnd: "Till Date",
+    responsibilities: [
+      `Engineered and shipped AI-powered matchmaking workflows across the ODS stack, improving recommendation precision and conversion across key user journeys.`,
+      `Architected secure authentication, authorization, and route-guard strategies across client and server layers, hardening account protection while preserving a seamless user experience.`,
+      `Led end-to-end delivery of responsive, high-performance product surfaces across ODS digital properties, including the landing page, blog, and core platform, reinforcing product consistency and brand credibility.`,
+    ],
+  },
+  {
+    occupation: "Mobile App Devloper",
+    companyName: "Spark Africa LLC",
     dateStart: "11/2025",
     dateEnd: "Till Date",
     responsibilities: [
@@ -13,16 +24,16 @@ export const experiences: JobExperience[] = [
       `Collaborated closely with backend engineers and UI/UX designers to ensure seamless integration and consistency across the product experience.`,
     ],
   },
+
   {
-    occupation: "Freelance Software Engineer",
-    companyName: "ODS",
-    dateStart: "O2/2022",
+    occupation: "Freelance Fullstack Developer",
+    companyName: "Rakel's Fashion House - Outfits for Women who dress to rule!",
+    dateStart: "02/2026",
     dateEnd: "Till Date",
     responsibilities: [
-      `Integrated AI-driven matchmaking features into the frontend platform, improving recommendation accuracy and enhancing customer satisfaction.`,
-      `Implemented secure authentication systems and protected route logic to ensure user privacy and platform security.`,
-      `Developed and maintained responsive, high-performance user interfaces for ODS's web assets, including the landing page, blog, and core frontend platform, driving user engagement and brand consistency.`,
-      `Collaborated closely with backend engineers and UI/UX designers to ensure seamless integration and consistency across the product experience.`,
+      `Built AI-assisted product discovery and recommendation workflows across Rakel's Fashion Hub platform, improving item relevance, shopper engagement, and purchase intent.`,
+      `Implemented robust authentication, authorization, and protected commerce flows to secure customer accounts, order data, and checkout operations.`,
+      `Delivered and optimized end-to-end e-commerce experiences, including the brand landing page, product catalog, and core purchase journeys, to strengthen usability, trust, and conversion.`,
     ],
   },
   {
@@ -101,18 +112,7 @@ export const projects: Project[] = [
       "React Navigation",
     ],
   },
-  // 3 Crypto Live-Tracker
-  {
-    id: crypto.randomUUID(),
-    projectName: "Crypto Live-Tracker",
-    projectImage:
-      "https://res.cloudinary.com/dznd7vzlb/image/upload/v1760974226/crypto-live-tracker_d80dym.png",
-    projectDescription: `CryptoLiveTracker is a real-time cryptocurrency dashboard powered by the CoinGecko API. It provides live price updates, percentage changes, market capitalization, and trending coin insights in an elegant, responsive UI. Built with React.js, Tailwind CSS and CoinGecko API, it ensures smooth performance and dynamic data fetching using React hooks. The platform includes intuitive sorting, dark mode, and an interactive chart section that visualizes live trends. CryptoLiveTracker serves as both a personal project for mastering API integration and a valuable tool for crypto enthusiasts who want accurate, fast, and visually engaging market tracking in one place.`,
-    demoLink: "https://crypto-live-tracker-rouge.vercel.app/",
-    githubLink: "https://github.com/Official-BigT/Crypto_Live-Tracker",
-    tools: ["React", "TailwindCSS", "Redux", "react-router"],
-  },
-  // 4 Furnishpere
+  // 3 Furnishpere
   {
     id: crypto.randomUUID(),
     projectName: "Furnisphere",
@@ -124,18 +124,18 @@ export const projects: Project[] = [
     githubLink: "https://github.com/Official-BigT/Furnisphere",
     tools: ["NextJS", "TypeScript", "TailwindCSS", "Framer Motion"],
   },
-  // 5 SafeDep Package Insights
-  {
+   // 4 Rakel's Fashion Hub
+   {
     id: crypto.randomUUID(),
-    projectName: "SafeDep Package Insights",
-    projectImage:
-      "https://res.cloudinary.com/dznd7vzlb/image/upload/v1768005978/Inter_Task_aiutrd.png",
-    projectDescription: `SafeDep Package Insights is a Next.js 16 application that displays security insights and analysis for open source packages using the SafeDep API. The application provides detailed information about package vulnerabilities, licenses, versions, and security metrics.`,
-    demoLink: "https://safedep-package-insights.vercel.app/",
-    githubLink: "https://github.com/Official-BigT/SafeDep",
-    tools: ["NextJS", "React", "TypeScript", "TailwindCSS"],
+    projectName: "Rakel's Fashion House",
+    projectImage: "https://res.cloudinary.com/dznd7vzlb/image/upload/v1774616158/Rakels_n5ajgq.png",
+    projectDescription:
+      "Rakel's Fashion House is a comprehensive fashion store designed to facilitate product management, order processing, and customer support. The frontend is a modern, fully scaffolded React/TypeScript application with a clean, user-friendly interface, featuring smooth animations and a responsive design. It includes features like product management, order processing, customer support, and a responsive design. It also includes a backend API built with Node.js, Express.js, and MongoDB. ",
+    demoLink: "https://rakels-fashion-house.vercel.app/",
+    githubLink: "https://github.com/Official-BigT/Rakel's-Fashion-House",
+    tools: ["React", "TypeScript", "TailwindCSS", "Framer Motion", "Cloudinary"],
   },
-  // 6 Forge Gym
+  // 5 Forge Gym (not completed)
   {
     id: crypto.randomUUID(),
     projectName: "Forge Gym",
@@ -153,7 +153,30 @@ export const projects: Project[] = [
       "Cloudinary",
     ],
   },
-  // 7 v1-Portfolio
+ 
+  // 6 Crypto Live-Tracker
+  {
+    id: crypto.randomUUID(),
+    projectName: "Crypto Live-Tracker",
+    projectImage:
+      "https://res.cloudinary.com/dznd7vzlb/image/upload/v1760974226/crypto-live-tracker_d80dym.png",
+    projectDescription: `CryptoLiveTracker is a real-time cryptocurrency dashboard powered by the CoinGecko API. It provides live price updates, percentage changes, market capitalization, and trending coin insights in an elegant, responsive UI. Built with React.js, Tailwind CSS and CoinGecko API, it ensures smooth performance and dynamic data fetching using React hooks. The platform includes intuitive sorting, dark mode, and an interactive chart section that visualizes live trends. CryptoLiveTracker serves as both a personal project for mastering API integration and a valuable tool for crypto enthusiasts who want accurate, fast, and visually engaging market tracking in one place.`,
+    demoLink: "https://crypto-live-tracker-rouge.vercel.app/",
+    githubLink: "https://github.com/Official-BigT/Crypto_Live-Tracker",
+    tools: ["React", "TailwindCSS", "Redux", "react-router"],
+  },
+  // 7 SafeDep Package Insights
+  {
+    id: crypto.randomUUID(),
+    projectName: "SafeDep Package Insights",
+    projectImage:
+      "https://res.cloudinary.com/dznd7vzlb/image/upload/v1768005978/Inter_Task_aiutrd.png",
+    projectDescription: `SafeDep Package Insights is a Next.js 16 application that displays security insights and analysis for open source packages using the SafeDep API. The application provides detailed information about package vulnerabilities, licenses, versions, and security metrics.`,
+    demoLink: "https://safedep-package-insights.vercel.app/",
+    githubLink: "https://github.com/Official-BigT/SafeDep",
+    tools: ["NextJS", "React", "TypeScript", "TailwindCSS"],
+  },
+  // 8 v1-Portfolio
   {
     id: crypto.randomUUID(),
     projectName: "v1-Portfolio",

@@ -5,7 +5,7 @@ import { projects } from "@/data/data";
 import Link from "next/link";
 import Image from "next/image";
 const RecentProjects = () => {
-  const latestProjects = projects.slice(0, 3);
+  const latestProjects = projects.slice(0, 4);
   const [expandedProject, setExpandedProject] = useState<string | null>(null);
 
   const toggleProject = (projectId: string) => {

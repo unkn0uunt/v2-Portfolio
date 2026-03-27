@@ -3,7 +3,7 @@ import NavBar from "@/components/NavBar";
 // import Script from "next/script";
 import { Outfit } from "next/font/google";
 import SmoothScrolling from "@/components/SmoothScrolling";
-import SVGLoader from "@/components/SVGloader";
+// import SVGLoader from "@/components/SVGloader";
 
 // Optimize font loading
 // const programme = localFont({
@@ -134,7 +134,7 @@ export default function RootLayout({
       </Script> */}
 
       <body className="antialiased overflow-x-hidden bg-[#ebebf3]">
-        <SVGLoader/>
+        {/* <SVGLoader/> */}
         {/* <NowPlaying /> */}
         <NavBar />
         <SmoothScrolling>
