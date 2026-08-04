@@ -112,20 +112,32 @@ const RecentProjects = () => {
                     </div>
 
                     <div className="flex gap-4 pt-2">
-                      <a
-                        href={project.demoLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-900 hover:text-gray-600 text-sm font-medium transition-colors duration-300 underline underline-offset-4"
-                      >
-                        View Demo
-                      </a>
+                      {project.demoLink.startsWith("/") ? (
+                        <Link
+                          href={project.demoLink}
+                          className="text-gray-900 hover:text-gray-600 text-sm font-medium transition-colors duration-300 underline underline-offset-4"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          View Case Study
+                        </Link>
+                      ) : (
+                        <a
+                          href={project.demoLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-900 hover:text-gray-600 text-sm font-medium transition-colors duration-300 underline underline-offset-4"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          View Demo
+                        </a>
+                      )}
                       {project.githubLink && (
                         <a
                           href={project.githubLink}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors duration-300 underline underline-offset-4"
+                          onClick={(e) => e.stopPropagation()}
                         >
                           GitHub
                         </a>

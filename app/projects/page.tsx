@@ -88,14 +88,14 @@ const ProjectsPage = () => {
         className="grid grid-cols-1 md:grid-cols-2 gap-10"
         variants={containerVariants}
       >
-        {projects.map((project) => (
+        {projects.map((project, index) => (
           <motion.div
             key={project.id}
             variants={itemVariants}
       
             className="transform-gpu"
           >
-            <ProjectCard project={project} />
+            <ProjectCard project={project} priority={index < 2} />
           </motion.div>
         ))}
       </motion.section>

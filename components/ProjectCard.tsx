@@ -6,7 +6,13 @@ import { motion } from "framer-motion";
 import ToolIcon from "./ToolIcon";
 import { Project } from "@/types/types";
 
-const ProjectCard = ({ project }: { project: Project }) => {
+const ProjectCard = ({
+  project,
+  priority = false,
+}: {
+  project: Project;
+  priority?: boolean;
+}) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const isLongDescription = project.projectDescription.length > 150;
   
@@ -23,7 +29,8 @@ const ProjectCard = ({ project }: { project: Project }) => {
           src={project.projectImage}
           alt={project.projectName}
           fill
-          loading={"lazy"}
+          priority={priority}
+          loading={priority ? "eager" : "lazy"}
           sizes="(max-width: 768px) 100vw, 600px"
           className="object-cover object-center rounded-t-2xl border-b transition-all duration-300 group-hover:brightness-50"
         />

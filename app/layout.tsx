@@ -3,6 +3,7 @@ import NavBar from "@/components/NavBar";
 // import Script from "next/script";
 import { Outfit } from "next/font/google";
 import SmoothScrolling from "@/components/SmoothScrolling";
+import type { Metadata, Viewport } from "next";
 // import SVGLoader from "@/components/SVGloader";
 
 // Optimize font loading
@@ -36,8 +37,12 @@ const outfit = Outfit({
 //   loading: () => <div className="h-6 bg-slate-900" />,
 // });
 
-export const metadata = {
-  viewport: { width: "device-width", initialScale: 1 },
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
+export const metadata: Metadata = {
   title: "Triumph Anya-Nga - Software Engineer Portfolio",
   // verification: {
   //   google: "ltfOnPx-NMzt2vBROfh-jAQr5R-U7ynE-3t3kmMTJGo",
@@ -114,7 +119,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={` ${outfit.variable}  font-sans scroll-smooth`}>
+    <html
+      lang="en"
+      className={` ${outfit.variable}  font-sans scroll-smooth`}
+      data-scroll-behavior="smooth"
+    >
       <head>
         {/* <meta name="theme-color" content="#FAF9F6" /> */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />

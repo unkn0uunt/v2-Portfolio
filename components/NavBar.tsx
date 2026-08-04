@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "Assets/bigt logo.png";
+import logo from "@/Assets/bigt logo.png";
 
 const menuVariants = {
   closed: {
