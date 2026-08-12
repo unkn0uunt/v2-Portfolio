@@ -1,5 +1,24 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/projects",
+        destination: "/works",
+        permanent: true,
+      },
+      {
+        source: "/projects/:slug",
+        destination: "/works/:slug",
+        permanent: true,
+      },
+      {
+        source: "/works/spark",
+        destination: "/works/ate",
+        permanent: true,
+      },
+    ];
+  },
   images: {
     loader: "custom",
     loaderFile: "./lib/cloudinary-loader.ts",

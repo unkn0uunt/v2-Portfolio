@@ -1,5 +1,7 @@
 import "./globals.css";
 import NavBar from "@/components/NavBar";
+import SocialRail from "@/components/SocialRail";
+import CursorInk from "@/components/CursorInk";
 // import Script from "next/script";
 import { Outfit } from "next/font/google";
 import SmoothScrolling from "@/components/SmoothScrolling";
@@ -102,7 +104,11 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon-32x32.png",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -145,9 +151,11 @@ export default function RootLayout({
       <body className="antialiased overflow-x-hidden bg-[#ebebf3]">
         {/* <SVGLoader/> */}
         {/* <NowPlaying /> */}
+        <CursorInk />
         <NavBar />
+        <SocialRail />
         <SmoothScrolling>
-          <main className="relative">{children}</main>
+          <main className="relative z-10">{children}</main>
         </SmoothScrolling>
       </body>
     </html>

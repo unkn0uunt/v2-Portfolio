@@ -1,209 +1,188 @@
 "use client";
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+
 import Link from "next/link";
-import Image from "next/image";
-import logo from "@/Assets/bigt logo.png";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useScroll } from "@/hooks/use-scroll";
+import { cn } from "@/lib/utils";
+import LogoMark from "@/components/LogoMark";
+
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/works", label: "Works" },
+];
 
 const menuVariants = {
   closed: {
     opacity: 0,
-    y: -20,
-    transition: {
-      duration: 0.3,
-      staggerChildren: 0.05,
-      staggerDirection: -1,
-    },
+    y: -12,
+    transition: { duration: 0.25, staggerChildren: 0.04, staggerDirection: -1 },
   },
   open: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.3,
-      staggerChildren: 0.07,
-      delayChildren: 0.2,
-    },
+    transition: { duration: 0.3, staggerChildren: 0.06, delayChildren: 0.08 },
   },
 };
 
 const itemVariants = {
-  closed: { opacity: 0, x: -20 },
+  closed: { opacity: 0, x: -12 },
   open: { opacity: 1, x: 0 },
 };
 
 export default function NavBar() {
-  const [navbar, setNavbar] = useState<boolean>(false);
-  const [scrolled, setScrolled] = useState<boolean>(false);
+  const pathname = usePathname() ?? "";
+  const [open, setOpen] = useState(false);
+  const scrolled = useScroll(12);
+  const floating = scrolled && !open;
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+    const onResize = () => {
+      if (window.innerWidth >= 1280 && open) setOpen(false);
     };
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [open]);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      document.body.style.overflow = "";
     };
-  }, []);
-
-  const toggleNavbar = () => {
-    setNavbar((prev) => !prev);
-  };
+  }, [open]);
 
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 1024 && navbar) {
-        setNavbar(false);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [navbar]);
-
-  const navItems = [
-    { href: "/", label: "Home" },
-    { href: "/projects", label: "Projects" },
-    {
-      href: "https://drive.google.com/file/d/10M5iX_r6BBb-7Giw-H_JmtdRwxTZ5D6p/view?usp=sharing",
-      label: "Resume",
-      external: true,
-    },
-  ];
+    setOpen(false);
+  }, [pathname]);
 
   return (
-    <motion.nav
-      initial={false}
-      animate={navbar ? "open" : "closed"}
-      className={`w-full fixed z-40 transition-all duration-300 font-outfit
-        ${
-          scrolled
-            ? "bg-slate-800/90 backdrop-blur-sm shadow-lg mt-0"
-            : "bg-slate-800"
-        }
-        ${navbar ? "h-screen md:h-auto" : ""}`}
+    <div
+      className={cn(
+        "pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center transition-[padding] duration-500 ease-out",
+        floating ? "px-3 pt-2 sm:px-4 sm:pt-3 md:pt-4" : "px-0 pt-0"
+      )}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Link href="/" className="flex-shrink-0">
-              <Image
-                src={logo}
-                alt="bigt logo"
-                className="w-8 h-8 md:w-10 md:h-10"
-                width={40}
-                height={40}
-                priority
-              />
-            </Link>
-          </motion.div>
-
-          {/* Mobile menu button */}
-          <motion.button
-            whileTap={{ scale: 0.95 }}
-            onClick={toggleNavbar}
-            className="lg:hidden inline-flex items-center justify-center p-2 rounded-md 
-            text-white hover:bg-slate-700 transition-colors duration-200"
-            aria-expanded={navbar}
+      <header
+        className={cn(
+          "pointer-events-auto w-full border border-transparent font-outfit text-white transition-all duration-500 ease-out",
+          open
+            ? "max-w-none rounded-b-2xl border-transparent bg-slate-900 shadow-[0_16px_40px_-20px_rgba(0,0,0,0.45)]"
+            : floating
+              ? "max-w-[min(100%,80rem)] rounded-2xl border-white/12 bg-slate-900 shadow-[0_20px_50px_-18px_rgba(0,0,0,0.55)] backdrop-blur-xl"
+              : "max-w-none rounded-none border-transparent bg-slate-900"
+        )}
+      >
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+          <Link
+            href="/"
+            className={cn(
+              "shrink-0 transition-transform duration-500 ease-out",
+              floating ? "scale-95" : "scale-100"
+            )}
+            aria-label="UNKNW0WNT home"
           >
-            <span className="sr-only">Open main menu</span>
-            <motion.div
-              animate={navbar ? "open" : "closed"}
-              variants={{
-                open: { rotate: 180 },
-                closed: { rotate: 0 },
-              }}
-              transition={{ duration: 0.2 }}
-            >
-              {navbar ? (
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
+            <LogoMark
+              inverted
+              className={cn(
+                "transition-[height] duration-500 ease-out",
+                floating ? "h-9" : "h-10"
               )}
-            </motion.div>
-          </motion.button>
+            />
+          </Link>
 
-          {/* Desktop menu */}
-          <div className="hidden lg:flex lg:items-center lg:space-x-8">
-            {navItems.map((item) => (
-              <motion.div
-                key={item.label}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            className="inline-flex items-center justify-center rounded-md p-2 text-white transition-colors hover:bg-white/10 xl:hidden"
+            aria-expanded={open}
+            aria-label={open ? "Close menu" : "Open menu"}
+          >
+            <span className="relative block h-5 w-6">
+              <span
+                className={cn(
+                  "absolute left-0 top-0.5 h-0.5 w-6 bg-current transition-all duration-300 ease-out",
+                  open && "top-2.5 rotate-45"
+                )}
+              />
+              <span
+                className={cn(
+                  "absolute left-0 top-2.5 h-0.5 w-6 bg-current transition-opacity duration-200",
+                  open && "opacity-0"
+                )}
+              />
+              <span
+                className={cn(
+                  "absolute left-0 top-[1.125rem] h-0.5 w-6 bg-current transition-all duration-300 ease-out",
+                  open && "top-2.5 -rotate-45"
+                )}
+              />
+            </span>
+          </button>
+
+          <nav className="hidden items-center gap-1 xl:flex">
+            {navItems.map((item) => {
+              const active =
+                item.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(item.href);
+              return (
                 <Link
+                  key={item.href}
                   href={item.href}
-                  target={item.external ? "_blank" : undefined}
-                  className="text-white hover:text-gray-300 px-3 py-2 text-sm font-medium
-                  hover:underline underline-offset-4 transition-all duration-200"
+                  className={cn(
+                    "rounded-md px-3 py-2 text-sm font-medium text-white/85 transition-colors duration-200 hover:text-white",
+                    active && "text-white underline underline-offset-4"
+                  )}
                 >
                   {item.label}
                 </Link>
-              </motion.div>
-            ))}
-            <button className="bg-white rounded-lg px-3 py-2 font-semibold">
+              );
+            })}
+            <Link
+              href="/contact"
+              className="ml-3 rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition-colors hover:bg-slate-100"
+            >
               Get In Touch
-            </button>
-          </div>
+            </Link>
+          </nav>
         </div>
 
-        {/* Mobile menu */}
         <AnimatePresence>
-          {navbar && (
+          {open && (
             <motion.div
               variants={menuVariants}
               initial="closed"
               animate="open"
               exit="closed"
-              className="lg:hidden"
+              className="border-t border-white/10 xl:hidden"
             >
-              <motion.div className="px-2 pt-2 pb-3 space-y-1">
+              <div className="space-y-1 px-4 pb-6 pt-3">
                 {navItems.map((item) => (
-                  <motion.div
-                    key={item.label}
-                    variants={itemVariants}
-                    whileTap={{ scale: 0.95 }}
-                  >
+                  <motion.div key={item.href} variants={itemVariants}>
                     <Link
                       href={item.href}
-                      target={item.external ? "_blank" : undefined}
-                      className="text-white hover:bg-slate-700 block px-3 py-2 rounded-md text-base
-                      font-medium transition-all duration-200"
-                      onClick={toggleNavbar}
+                      className="block rounded-md px-3 py-2.5 text-base font-medium text-white hover:bg-white/10"
+                      onClick={() => setOpen(false)}
                     >
                       {item.label}
                     </Link>
                   </motion.div>
                 ))}
-              </motion.div>
+                <motion.div variants={itemVariants}>
+                  <Link
+                    href="/contact"
+                    className="mt-2 inline-flex rounded-full bg-white px-4 py-2.5 text-base font-semibold text-slate-900"
+                    onClick={() => setOpen(false)}
+                  >
+                    Get In Touch
+                  </Link>
+                </motion.div>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
-      </div>
-    </motion.nav>
+      </header>
+    </div>
   );
 }

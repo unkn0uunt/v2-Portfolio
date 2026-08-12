@@ -32,12 +32,17 @@ import {
   SiLaravel,
   SiRender,
   SiExpo,
+  SiPostgresql,
+  SiNestjs,
+  SiFastapi,
+  SiBun,
+  SiNodedotjs,
 } from "react-icons/si";
 
 const toolConfig = {
   nextjs: { Icon: SiNextdotjs, color: "bg-black", label: "Next.js" },
-  bootstrap: { Icon: SiBootstrap, color: "bg-black", label: "bootstrap" },
-  html5: { Icon: SiHtml5, color: "bg-black", label: "html5" },
+  bootstrap: { Icon: SiBootstrap, color: "bg-black", label: "Bootstrap" },
+  html5: { Icon: SiHtml5, color: "bg-black", label: "HTML5" },
   typescript: { Icon: SiTypescript, color: "bg-blue-600", label: "TypeScript" },
   tailwindcss: {
     Icon: SiTailwindcss,
@@ -47,7 +52,7 @@ const toolConfig = {
   laravel: {
     Icon: SiLaravel,
     color: "bg-red-500",
-    label: "Tailwind CSS",
+    label: "Laravel",
   },
   "framer motion": {
     Icon: SiFramer,
@@ -78,6 +83,10 @@ const toolConfig = {
   render: { Icon: SiRender, color: "bg-black", label: "Render" },
   docker: { Icon: SiDocker, color: "bg-blue-600", label: "Docker" },
   expressjs: { Icon: SiExpress, color: "bg-gray-700", label: "Express.js" },
+  express: { Icon: SiExpress, color: "bg-gray-700", label: "Express.js" },
+  "node.js": { Icon: SiNodedotjs, color: "bg-green-700", label: "Node.js" },
+  nodejs: { Icon: SiNodedotjs, color: "bg-green-700", label: "Node.js" },
+  node: { Icon: SiNodedotjs, color: "bg-green-700", label: "Node.js" },
   vite: { Icon: SiVite, color: "bg-purple-500", label: "Vite" },
   postman: { Icon: SiPostman, color: "bg-orange-500", label: "Postman" },
   sass: { Icon: SiSass, color: "bg-pink-500", label: "Sass" },
@@ -89,7 +98,17 @@ const toolConfig = {
   "react native": { Icon: SiReact, color: "bg-cyan-400", label: "React Native" },
   expo: { Icon: SiExpo, color: "bg-black", label: "Expo" },
   nativewind: { Icon: SiTailwindcss, color: "bg-cyan-500", label: "NativeWind" },
-  "react navigation": { Icon: SiReactrouter, color: "bg-purple-600", label: "React Navigation" },
+  "react navigation": {
+    Icon: SiReactrouter,
+    color: "bg-purple-600",
+    label: "React Navigation",
+  },
+  postgres: { Icon: SiPostgresql, color: "bg-blue-700", label: "PostgreSQL" },
+  postgresql: { Icon: SiPostgresql, color: "bg-blue-700", label: "PostgreSQL" },
+  nestjs: { Icon: SiNestjs, color: "bg-red-600", label: "NestJS" },
+  fastapi: { Icon: SiFastapi, color: "bg-teal-600", label: "FastAPI" },
+  bunjs: { Icon: SiBun, color: "bg-amber-400 text-black", label: "Bun" },
+  bun: { Icon: SiBun, color: "bg-amber-400 text-black", label: "Bun" },
 };
 
 const ToolIcon: React.FC<{ tool: string }> = ({ tool }) => {
@@ -116,7 +135,6 @@ const ToolIcon: React.FC<{ tool: string }> = ({ tool }) => {
     );
   }
 
-  // Fallback to text if no icon is found
   return (
     <span className="inline-block px-2 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded-md">
       {tool}

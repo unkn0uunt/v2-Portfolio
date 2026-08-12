@@ -2,26 +2,14 @@ import { JobExperience, Project } from "@/types/types";
 
 export const experiences: JobExperience[] = [
   {
-    occupation: "Freelance Fullstack Engineer",
-    companyName: "ODS",
-    dateStart: "02/2022",
+    occupation: "Freelance Fullstack Developer",
+    companyName: "Rentigram — Rent Luxury Cars, Jets & Yachts",
+    dateStart: "08/2026",
     dateEnd: "Till Date",
     responsibilities: [
-      `Engineered and shipped AI-powered matchmaking workflows across the ODS stack, improving recommendation precision and conversion across key user journeys.`,
-      `Architected secure authentication, authorization, and route-guard strategies across client and server layers, hardening account protection while preserving a seamless user experience.`,
-      `Led end-to-end delivery of responsive, high-performance product surfaces across ODS digital properties, including the landing page, blog, and core platform, reinforcing product consistency and brand credibility.`,
-    ],
-  },
-  {
-    occupation: "Mobile App Devloper",
-    companyName: "Spark Africa LLC",
-    dateStart: "11/2025",
-    dateEnd: "Till Date",
-    responsibilities: [
-      `Integrated heavy data synchronization features into the frontend platform, improving recommendation accuracy and enhancing attendees match-making satisfaction.`,
-      `Implemented secure authentication systems and protected route logic to ensure user privacy and platform security.`,
-      `Developed and maintained responsive, high-performance user interfaces for Spark's mobile assets, including the home page, ticketing and profile screens, core frontend platform, driving user engagement and brand consistency.`,
-      `Collaborated closely with backend engineers and UI/UX designers to ensure seamless integration and consistency across the product experience.`,
+      `Shipped a luxury rental marketplace for cars, jets, yachts, and experiences across Nigeria — search, category browsing, and listing discovery built for high-intent hosts and renters.`,
+      `Delivered MERN-stack product surfaces with responsive listing cards, host verification cues, and filter flows tuned for premium inventory discovery.`,
+      `Integrated end-to-end marketplace journeys from browse to host profiles, reinforcing trust and conversion for a high-ticket rental audience.`,
     ],
   },
   {
@@ -58,14 +46,15 @@ export const experiences: JobExperience[] = [
     ],
   },
   {
-    occupation: "Freelance Fullstack Developer",
-    companyName: "Petrochem Oil Trading Nigeria Ltd",
-    dateStart: "11/2024",
+    occupation: "Mobile App Developer",
+    companyName: "Spark Africa LLC",
+    dateStart: "11/2025",
     dateEnd: "Till Date",
     responsibilities: [
-      `Developed a corporate web platform presenting petroleum product lines, supply programmes, and leadership credentials for B2B trading audiences.`,
-      `Built documentation-focused sections covering markets, operations, HSE, and counterparty verification to communicate regulatory compliance and trade discipline.`,
-      `Delivered a responsive, professional interface across product catalogues, enquiry flows, and company governance content for West African and international stakeholders.`,
+      `Integrated heavy data synchronization features into the frontend platform, improving recommendation accuracy and enhancing attendees match-making satisfaction.`,
+      `Implemented secure authentication systems and protected route logic to ensure user privacy and platform security.`,
+      `Developed and maintained responsive, high-performance user interfaces for Spark's mobile assets, including the home page, ticketing and profile screens, core frontend platform, driving user engagement and brand consistency.`,
+      `Collaborated closely with backend engineers and UI/UX designers to ensure seamless integration and consistency across the product experience.`,
     ],
   },
   {
@@ -81,6 +70,17 @@ export const experiences: JobExperience[] = [
     ],
   },
   {
+    occupation: "Freelance Fullstack Developer",
+    companyName: "Petrochem Oil Trading Nigeria Ltd",
+    dateStart: "11/2024",
+    dateEnd: "Till Date",
+    responsibilities: [
+      `Developed a corporate web platform presenting petroleum product lines, supply programmes, and leadership credentials for B2B trading audiences.`,
+      `Built documentation-focused sections covering markets, operations, HSE, and counterparty verification to communicate regulatory compliance and trade discipline.`,
+      `Delivered a responsive, professional interface across product catalogues, enquiry flows, and company governance content for West African and international stakeholders.`,
+    ],
+  },
+  {
     occupation: "Software Developer Intern",
     companyName: "Whitehat Academy",
     dateStart: "06/2023",
@@ -90,6 +90,17 @@ export const experiences: JobExperience[] = [
       "Built a simplified frontend interface for testing and triggering backend actions, allowing non-technical team members to interact with endpoints without needing Postman.",
       "Worked closely with backend engineers to integrate APIs and services, reducing data retrieval time by 30% and ensuring smooth frontend-backend communication.",
       "Partnered with UI/UX designers to enhance usability and visual consistency, leading to a 25% drop in bounce rate and a 15% improvement in user satisfaction among internal users.",
+    ],
+  },
+  {
+    occupation: "Freelance Fullstack Engineer",
+    companyName: "ODS",
+    dateStart: "02/2022",
+    dateEnd: "Till Date",
+    responsibilities: [
+      `Engineered and shipped AI-powered matchmaking workflows across the ODS stack, improving recommendation precision and conversion across key user journeys.`,
+      `Architected secure authentication, authorization, and route-guard strategies across client and server layers, hardening account protection while preserving a seamless user experience.`,
+      `Led end-to-end delivery of responsive, high-performance product surfaces across ODS digital properties, including the landing page, blog, and core platform, reinforcing product consistency and brand credibility.`,
     ],
   },
   {
@@ -106,32 +117,67 @@ export const experiences: JobExperience[] = [
 ];
 
 export const projects: Project[] = [
-  
-  // 1 — Furnisphere
+  // — Mobile (featured on homepage)
   {
-    id: "furnisphere",
-    projectName: "Furnisphere",
+    id: "ate",
+    projectName: "Africa Technology Expo",
     projectImage:
-      "https://res.cloudinary.com/dznd7vzlb/image/upload/v1761072343/furnisphere_oxtmku.png",
+      "https://res.cloudinary.com/dznd7vzlb/image/upload/v1786544139/ate1_rj7vfo.png",
     projectDescription:
-      "A modern furniture-themed showcase built from Figma to demonstrate responsive design, Framer Motion animations, and web accessibility best practices. A high-quality UI/UX implementation — not a live store.",
-    demoLink: "https://furnisphere-ods.vercel.app/",
-    githubLink: "https://github.com/Official-BigT/Furnisphere",
-    tools: ["NextJS", "TypeScript", "TailwindCSS", "Framer Motion"],
+      "Official companion app for Africa Technology Expo — ticket authentication, attendee networking, schedules, QR ticketing, and on-site engagement.",
+    demoLink: "/works/ate",
+    tools: ["React Native", "Expo", "TypeScript", "TailwindCSS", "FastAPI", "Postgres"],
+    category: "mobile",
+    featured: true,
+    visibility: "private",
+    imageVariant: "marketing",
+    year: "2025",
   },
-  // 2 — Rakel's Fashion House
   {
-    id: "rakels-fashion-house",
-    projectName: "Rakel's Fashion House",
+    id: "asf",
+    projectName: "Africa Startup Festival",
     projectImage:
-      "https://res.cloudinary.com/dznd7vzlb/image/upload/v1774616158/Rakels_n5ajgq.png",
+      "https://res.cloudinary.com/dznd7vzlb/image/upload/v1785846655/1242_2688_t1mqlp.png",
     projectDescription:
-      "A full-stack e-commerce platform for product management, order processing, and customer support. Features a responsive React/TypeScript frontend with smooth animations and a Node.js/MongoDB backend.",
-    demoLink: "https://rakels-fashion-house.vercel.app/",
-    githubLink: "https://github.com/Official-BigT/Rakel's-Fashion-House",
-    tools: ["React", "TypeScript", "TailwindCSS", "Framer Motion", "Cloudinary"],
+      "Official ASF companion app — connect with founders and investors, build your agenda, discover startups, and book focused meetings on the floor.",
+    demoLink: "/works/asf",
+    tools: ["React Native", "Expo", "TypeScript", "TailwindCSS", "FastAPI", "Postgres"],
+    category: "mobile",
+    featured: true,
+    visibility: "private",
+    imageVariant: "marketing",
+    year: "2026",
   },
-  // 3 — The Legal Home
+  {
+    id: "farmx",
+    projectName: "FarmX",
+    projectImage:
+      "https://res.cloudinary.com/dznd7vzlb/image/upload/v1785847452/farmx1_aopmwa.png",
+    projectDescription:
+      "Farm-to-door marketplace for African agriculture — verified farms, fresh produce delivery, and a multi-category explore hub for consumers.",
+    demoLink: "/works/farmx",
+    tools: ["React Native", "Expo", "TypeScript", "TailwindCSS", "NestJS", "Postgres"],
+    category: "mobile",
+    featured: true,
+    visibility: "private",
+    imageVariant: "device",
+    year: "2026",
+  },
+
+  // — Web (featured on homepage)
+  {
+    id: "rentigram",
+    projectName: "Rentigram",
+    projectImage:
+      "https://res.cloudinary.com/dznd7vzlb/image/upload/v1786553110/Screenshot_2026-08-12_at_5.06.06_PM_m166mk.png",
+    projectDescription:
+      "Discover and rent luxury cars, jets, yachts and experiences across Nigeria.",
+    demoLink: "https://www.rentigram.com",
+    tools: ["MongoDB", "Expressjs", "React", "Node.js"],
+    category: "web",
+    featured: true,
+    year: "2026",
+  },
   {
     id: "legal-home",
     projectName: "The Legal Home",
@@ -141,30 +187,63 @@ export const projects: Project[] = [
       "A premium legal services website for Hamilton & Reese Attorneys at Law — practice areas, partner profiles, case studies, and consultation flows. Built for clarity, trust, and fast discovery in a high-stakes industry.",
     demoLink: "https://legal-home.vercel.app/",
     tools: ["React", "TypeScript", "TailwindCSS"],
+    category: "web",
+    featured: true,
+    year: "2026",
   },
-  // 4 — Nero Labs
   {
     id: "nero-labs",
     projectName: "Nero Labs",
     projectImage:
       "https://res.cloudinary.com/dznd7vzlb/image/upload/v1785851343/nero-labs_qdiuqk.png",
     projectDescription:
-      "A formulation studio platform for cosmetic and home chemical products — teaching safe DIY recipes, selling raw materials, and guiding small brands from kitchen batch to product line. Courses, product catalogues, and WhatsApp ordering in one clean experience.",
+      "A formulation studio platform for cosmetic and home chemical products — teaching safe DIY recipes, selling raw materials, and guiding small brands from kitchen batch to product line.",
     demoLink: "https://nero-labs-three.vercel.app/",
     tools: ["React", "TypeScript", "TailwindCSS"],
+    category: "web",
+    featured: true,
+    year: "2025",
   },
-  // 5 — Petrochem Oil Trading LTD
+  {
+    id: "rakels-fashion-house",
+    projectName: "Rakel's Fashion House",
+    projectImage:
+      "https://res.cloudinary.com/dznd7vzlb/image/upload/v1774616158/Rakels_n5ajgq.png",
+    projectDescription:
+      "A full-stack e-commerce platform for product management, order processing, and customer support. Features a responsive React/TypeScript frontend with smooth animations and a Node.js/MongoDB backend.",
+    demoLink: "https://rakels-fashion-house.vercel.app/",
+    tools: ["React", "TypeScript", "TailwindCSS", "Framer Motion", "Cloudinary"],
+    category: "web",
+    featured: true,
+    year: "2026",
+  },
   {
     id: "petrochem",
     projectName: "Petrochem Oil Trading LTD",
     projectImage:
       "https://res.cloudinary.com/dznd7vzlb/image/upload/v1785851344/petrochem_twmfnf.png",
     projectDescription:
-      "A corporate web platform for a petroleum trading and brokerage firm — product lines, supply programmes, leadership, and counterparty credentials. Designed with a documentation-first, trust-centric experience for B2B audiences across West Africa and the Atlantic Basin.",
+      "A corporate web platform for a petroleum trading and brokerage firm — product lines, supply programmes, leadership, and counterparty credentials.",
     demoLink: "https://wwwpetrochemoiltradingltd.com/",
     tools: ["React", "TypeScript", "TailwindCSS"],
+    category: "web",
+    featured: false,
+    year: "2024",
   },
-  // 6 — Forge Gym
+
+  // — Web (remaining)
+  {
+    id: "furnisphere",
+    projectName: "Furnisphere",
+    projectImage:
+      "https://res.cloudinary.com/dznd7vzlb/image/upload/v1761072343/furnisphere_oxtmku.png",
+    projectDescription:
+      "A modern furniture-themed showcase built from Figma to demonstrate responsive design, Framer Motion animations, and web accessibility best practices.",
+    demoLink: "https://furnisphere-ods.vercel.app/",
+    tools: ["NextJS", "TypeScript", "TailwindCSS", "Framer Motion"],
+    category: "web",
+    year: "2024",
+  },
   {
     id: "forge-gym",
     projectName: "Forge Gym",
@@ -173,58 +252,22 @@ export const projects: Project[] = [
     projectDescription:
       "A gym management system for member management, class scheduling, check-ins, and subscription handling. Built with React/TypeScript and an energetic yellow/charcoal theme.",
     demoLink: "https://forgegym.vercel.app/",
-    githubLink: "https://github.com/Official-BigT/Forge-gym-Frontend/",
-    tools: [
-      "React",
-      "TypeScript",
-      "TailwindCSS",
-      "Framer Motion",
-      "Cloudinary",
-    ],
+    tools: ["React", "TypeScript", "TailwindCSS", "Framer Motion", "Cloudinary"],
+    category: "web",
+    year: "2025",
   },
-
-// 7 — SageSync
-{
-  id: "sage-sync",
-  projectName: "SageSync",
-  projectImage:
-    "https://res.cloudinary.com/dznd7vzlb/image/upload/v1760974226/sage-sync_y63eq9.png",
-  projectDescription:
-    "A financial management SaaS for African freelancers and small business owners. Simplifies income tracking, invoicing, and goal management with AI-assisted expense categorization and a built-in business card generator.",
-  demoLink: "https://sage-sync.vercel.app/",
-  githubLink: "https://github.com/Official-BigT/sage-sync-212ee2c6",
-  tools: [
-    "NextJS",
-    "React",
-    "TypeScript",
-    "TailwindCSS",
-    "Expressjs",
-    "mongodb",
-    "vercel",
-    "render",
-  ],
-},
-// 8 — Spark Event Platform
-{
-  id: "spark-event-platform",
-  projectName: "Spark Event Platform App",
-  projectImage:
-    "https://res.cloudinary.com/dznd7vzlb/image/upload/v1769262076/Login_page_v1_nbd5pu.png",
-  projectDescription:
-    "An internal React Native event networking app for scheduling meetings, QR ticketing, and real-time notifications. I built the UI, navigation architecture, and backend API integration across all mobile screens.",
-  demoLink: "/projects/spark",
-  githubLink: "https://github.com/Official-BigT/Spark",
-  tools: [
-    "React Native",
-    "Expo",
-    "TypeScript",
-    "NativeWind",
-    "React Navigation",
-  ],
-},
-
-
-  // 9 — Crypto Live-Tracker
+  {
+    id: "sage-sync",
+    projectName: "SageSync",
+    projectImage:
+      "https://res.cloudinary.com/dznd7vzlb/image/upload/v1760974226/sage-sync_y63eq9.png",
+    projectDescription:
+      "A financial management SaaS for African freelancers and small business owners. Simplifies income tracking, invoicing, and goal management with AI-assisted expense categorization.",
+    demoLink: "https://sage-sync.vercel.app/",
+    tools: ["NextJS", "React", "TypeScript", "TailwindCSS", "Expressjs", "mongodb", "vercel", "render"],
+    category: "web",
+    year: "2025",
+  },
   {
     id: "crypto-live-tracker",
     projectName: "Crypto Live-Tracker",
@@ -233,10 +276,10 @@ export const projects: Project[] = [
     projectDescription:
       "A real-time cryptocurrency dashboard powered by the CoinGecko API. Live prices, market cap, trending coins, dark mode, and interactive charts in a responsive UI.",
     demoLink: "https://crypto-live-tracker-rouge.vercel.app/",
-    githubLink: "https://github.com/Official-BigT/Crypto_Live-Tracker",
     tools: ["React", "TailwindCSS", "Redux", "react-router"],
+    category: "web",
+    year: "2024",
   },
-  // 10 — SafeDep Package Insights
   {
     id: "safedep-package-insights",
     projectName: "SafeDep Package Insights",
@@ -245,10 +288,10 @@ export const projects: Project[] = [
     projectDescription:
       "A Next.js application displaying security insights for open source packages via the SafeDep API — vulnerabilities, licenses, versions, and security metrics.",
     demoLink: "https://safedep-package-insights.vercel.app/",
-    githubLink: "https://github.com/Official-BigT/SafeDep",
     tools: ["NextJS", "React", "TypeScript", "TailwindCSS"],
+    category: "web",
+    year: "2025",
   },
-  // 11 — v1-Portfolio
   {
     id: "v1-portfolio",
     projectName: "v1-Portfolio",
@@ -257,7 +300,16 @@ export const projects: Project[] = [
     projectDescription:
       "My first portfolio site — a Laravel/Blade and PHP build from my early developer days, styled with Tailwind CSS and Bootstrap.",
     demoLink: "https://triumph-anya-ngav1-portfolio.vercel.app/",
-    githubLink: "https://github.com/Official-BigT/v1-Portfolio",
     tools: ["Html5", "TailwindCSS", "Laravel", "Bootstrap"],
+    category: "web",
+    year: "2023",
   },
 ];
+
+export const featuredWebProjects = projects.filter(
+  (p) => p.category === "web" && p.featured
+);
+
+export const featuredMobileProjects = projects.filter(
+  (p) => p.category === "mobile" && p.featured
+);

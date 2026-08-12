@@ -15,6 +15,9 @@
 # production
 /build
 
+# data
+/docs
+
 # api
 /pages/api/spotify.ts
 

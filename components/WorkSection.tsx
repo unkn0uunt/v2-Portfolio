@@ -4,15 +4,11 @@ import WorkExperience from "./WorkExperience";
 
 const WorkSection = () => {
   return (
-    <div className=" w-full flex flex-col lg:flex-row lg:justify-between gap-16 lg:gap-28  mt-36 max-w-7xl mx-auto px-3 md:px-16  lg:px-20 py-16">
-
-      {/* Work Experience Section */}
-      <div className="flex-1">
+    <div className="w-full flex flex-col lg:flex-row lg:justify-between gap-12 lg:gap-20 mt-20 sm:mt-28 lg:mt-36 max-w-7xl mx-auto px-5 sm:px-6 md:px-16 lg:px-20 py-10 sm:py-16">
+      <div className="flex-1 min-w-0">
         <WorkExperience />
       </div>
-
-      {/* Recent Projects Section */}
-      <div className="flex-1">
+      <div className="flex-1 min-w-0">
         <RecentProjects />
       </div>
     </div>

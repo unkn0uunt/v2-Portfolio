@@ -28,6 +28,11 @@ export type JobExperience = {
   responsibilities: string[];
 };
 
+export type ProjectCategory = "web" | "mobile";
+export type ProjectVisibility = "public" | "private" | "nda";
+export type CaseStudyMode = "full" | "store-only";
+export type ScreenVariant = "device" | "marketing";
+
 export type Project = {
   id: string;
   projectName: string;
@@ -36,4 +41,46 @@ export type Project = {
   demoLink: string;
   githubLink?: string;
   tools: string[];
+  category?: ProjectCategory;
+  featured?: boolean;
+  visibility?: ProjectVisibility;
+  year?: string;
+  /** "marketing" = full portrait promo shot (skip phone bezel). "device" = raw app screenshot. */
+  imageVariant?: ScreenVariant;
 };
+
+export type CaseStudyScreen = {
+  src: string;
+  alt: string;
+  caption?: string;
+  variant?: ScreenVariant;
+};
+
+export type StoreLinks = {
+  ios?: string;
+  android?: string;
+};
+
+export type MobileCaseStudy = {
+  slug: string;
+  title: string;
+  tagline: string;
+  role: string;
+  overview: string[];
+  /** What you personally owned / shipped */
+  responsibilities: string[];
+  /** Product capabilities (separate from your role) */
+  features: string[];
+  techStack: string[];
+  heroScreens: CaseStudyScreen[];
+  screens: CaseStudyScreen[];
+  visibility: ProjectVisibility;
+  mode?: CaseStudyMode;
+  githubLink?: string;
+  storeLinks?: StoreLinks;
+  privateNotice?: string;
+  parentCompany?: string;
+};
+
+export const PRIVATE_CASE_STUDY_NOTICE =
+  "Private client build. Selected screens shown with permission — source and live access are not public.";

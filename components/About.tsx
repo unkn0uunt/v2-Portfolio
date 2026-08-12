@@ -44,7 +44,7 @@ const About = memo(() => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
-      className="flex flex-col px-3md:px-16 lg:px-20 pt-16 sm:pt-20 
+      className="flex flex-col px-5 sm:px-6 md:px-16 lg:px-20 pt-16 sm:pt-20 
       max-w-7xl mx-auto w-full"
     >
       <h2
@@ -75,11 +75,11 @@ const About = memo(() => {
             priority
             className="border-dashed border-2 border-gray-400 object-cover 
             rounded-lg shadow-lg transition-transform duration-300 
-            hover:scale-105"
+            hover:scale-105 w-full max-w-[320px] h-auto"
           />
         </motion.div>
 
-        <div className="space-y-6 text-base sm:text-lg lg:text-xl px-6 md:px-16  lg:px-20">
+        <div className="space-y-6 text-base sm:text-lg lg:text-xl w-full">
           <div className="space-y-4">
             <p className="leading-relaxed">
               Before diving into tech fully, I was an internet of things
@@ -103,21 +103,21 @@ const About = memo(() => {
             </p>
           </div>
 
-          <div className="pt-4 ">
+          <div className="pt-4">
             <h3 className="text-base mb-3 font-semibold text-gray-800">
               Technologies I work with:
             </h3>
-            <ul className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+            <ul className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
               {technologies.map((tech, index) => (
                 <motion.li
                   key={tech}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                  className="flex items-center space-x-2 text-gray-700"
+                  transition={{ duration: 0.3, delay: Math.min(index * 0.03, 0.4) }}
+                  className="flex items-center space-x-2 text-sm sm:text-base text-gray-700"
                 >
-                  <span className="h-1.5 w-1.5 bg-gray-500 rounded-full" />
+                  <span className="h-1.5 w-1.5 bg-gray-500 rounded-full shrink-0" />
                   <span>{tech}</span>
                 </motion.li>
               ))}

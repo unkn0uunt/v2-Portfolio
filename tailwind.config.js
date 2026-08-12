@@ -16,6 +16,7 @@ module.exports = {
 
       fontFamily: {
         clash: ["Clash Display", "sans-serif"],
+        display: ["Clash Display", "var(--font-outfit)", "sans-serif"],
         programme: ["var(--font-programme)"],
         montecatiniPro: ["var(--font-montecatiniPro)"],
         outfit: ["var(--font-outfit)"],

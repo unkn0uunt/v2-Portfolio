@@ -1,104 +1,38 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client";
+
 import React from "react";
-import Button from "./Button";
-import { SocialIcon } from "react-social-icons";
+import { SocialRow } from "@/components/SocialRail";
 
 const ContactMe = () => {
-  const handleClick = () => {
-    const subject = encodeURIComponent("Hey Triumph, I saw your portfolio!");
-    const body = encodeURIComponent(
-      "Hi Triumph,\n\nI came across your portfolio and wanted to connect with you about a potential opportunity.\n\nBest regards,\n[Your Name]"
-    );
-
-    window.location.href = `mailto:triumphanyanga@gmail.com?subject=${subject}&body=${body}`;
-  };
   return (
-    <footer
-      className=" flex text-center flex-col md:text-left mt-10 lg:mt-28 mb-5 max-w-7xl
-       px-3 lg:px-10  overflow-hidden   mx-auto items-center lg:space-y-10  "
-    >
-      <h3
-        className="text-3xl md:mb-[6rem]  lg:mb-[0] font-semibold
-        font-outfit text-gray-500"
-      >
+    <footer className="relative z-10 flex text-center flex-col mt-10 lg:mt-28 mb-8 max-w-7xl px-5 sm:px-6 lg:px-10 mx-auto items-center">
+      <h3 className="text-2xl sm:text-3xl mb-6 lg:mb-10 font-semibold font-outfit text-gray-500">
         Get In Touch
       </h3>
-      <div
-        className="lg:space-y-20 pb-40 lg:pb-10 xl:space-y-1 flex flex-col items-center justify-start md:max-w-2xl lg:max-w-3xl max-w-3xl tracking-wide text-center font-normal xl:text"
-      >
-        <p className="text-sm my-3 xl:mb-16 xl:text-xl  p-5 text-start md:text-center md:text-xl lg:text-3xl ">
-          Ready to take your web/mobile projects to the next{" "}
-          <span className="underline decoration-black decoration-2">level</span>
-          ? <br /> Let's collaborate and create exceptional user experiences
-          together.
-          <br /> Contact me now and let's discuss how I can contribute to your
-          frontend development needs. Reach out and let's build something
-          amazing!
+
+      <div className="pb-28 lg:pb-12 max-w-2xl tracking-wide text-center">
+        <p className="text-base sm:text-lg md:text-xl text-slate-700 leading-relaxed mb-8">
+          Have a product to ship — web, mobile, or both?{" "}
+          <span className="underline decoration-black decoration-2">
+            Let&apos;s talk
+          </span>
+          .
+          <br className="hidden sm:block" /> I work across UI and API
+          integration, and I reply quickly.
         </p>
-        <Button title="Say Hello" />
+        <a
+          href="mailto:triumphanyanga@gmail.com?subject=Hey%20Triumph%2C%20I%20saw%20your%20portfolio!"
+          className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white text-slate-900 text-sm sm:text-base font-semibold border-2 border-slate-900 shadow-[4px_4px_0_0_#0f172a] hover:shadow-[2px_2px_0_0_#0f172a] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-1 active:translate-y-1 transition-all"
+        >
+          Say Hello
+        </a>
       </div>
-      <div className=" absolute bottom-10 space-x-4 xl:space-y-5 xl:bottom-[11rem] xl:left-5 xl:space-x-0 xl:flex xl:flex-col xl:z-20 xl:fixed xl:items-center xl:justify-center xl:text-center">
-        <SocialIcon
-          network="email"
-          bgColor="transparent"
-          fgColor="#464646"
-          onClick={handleClick}
-          target="_blank"
-          className="h-2 w-2 filter grayscale hover:cursor-pointer  hover:filter-none hover:animate-pulse transition duration-200 ease-in-out"
-        />
-        <SocialIcon
-          network="linkedin"
-          bgColor="transparent"
-          fgColor="#0077b5"
-          url="https://www.linkedin.com/in/unkn0wnt"
-          target="_blank"
-          className="h-2 w-2 filter grayscale  hover:filter-none hover:animate-pulse transition duration-200 ease-in-out"
-        />
-        <SocialIcon
-          network="github"
-          bgColor="transparent"
-          fgColor="#464646"
-          url="https://github.com/Official-BigT/"
-          target="_blank"
-          className="h-2 w-2 filter grayscale  hover:filter-none hover:animate-pulse transition duration-200 ease-in-out"
-        />
-        <SocialIcon
-          network="twitter"
-          bgColor="transparent"
-          fgColor="#1DA1F2"
-          url="https://x.com/un_kn0wnt?s=21"
-          target="_blank"
-          className="h-2 w-2 filter grayscale  hover:filter-none hover:animate-pulse transition duration-200 ease-in-out"
-        />
-        <SocialIcon
-          network="instagram"
-          bgColor="transparent"
-          fgColor="#e91578"
-          url="https://www.instagram.com/un_kn0wnt?igsh=MW5pMW1xdzZuaXR2dQ%3D%3D&utm_source=qr"
-          target="_blank"
-          className="h-2 w-2 filter grayscale  hover:filter-none hover:animate-pulse transition duration-200 ease-in-out"
-        />
-        <SocialIcon
-          network="snapchat"
-          bgColor="transparent"
-          fgColor="#eded0bff"
-          url="https://snapchat.com/t/Q2LH64nT"
-          target="_blank"
-          className="h-2 w-2 filter grayscale  hover:filter-none hover:animate-pulse transition duration-200 ease-in-out"
-        />
-        <SocialIcon
-          network="whatsapp"
-          bgColor="transparent"
-          fgColor="#25D366"
-          url="https://wa.link/p8gg7u"
-          target="_blank"
-          className="h-2 w-2 filter grayscale  hover:filter-none hover:animate-pulse transition duration-200 ease-in-out"
-        />
-      </div>
-      <p className="text-xs tracking-wide font-normal">
-        Created by
-        <span className="font-semibold"> Unkn0wnT</span> @2026
+
+      <SocialRow className="xl:hidden mb-8" />
+
+      <p className="text-xs tracking-wide text-slate-500">
+        Created by <span className="font-semibold text-slate-700">Unkn0wnT</span>{" "}
+        @2026
       </p>
     </footer>
   );
