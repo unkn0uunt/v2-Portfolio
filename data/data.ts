@@ -131,7 +131,7 @@ export const projects: Project[] = [
     featured: true,
     visibility: "private",
     imageVariant: "marketing",
-    year: "2025",
+    year: "2026",
   },
   {
     id: "asf",
