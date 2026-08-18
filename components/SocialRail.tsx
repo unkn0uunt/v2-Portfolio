@@ -24,7 +24,7 @@ const socials: Social[] = [
   },
   {
     label: "GitHub",
-    href: "https://github.com/Official-BigT/",
+    href: "https://github.com/unkn0uunt",
     Icon: FaGithub,
   },
   {
