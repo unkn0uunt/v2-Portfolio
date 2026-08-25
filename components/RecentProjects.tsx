@@ -55,12 +55,18 @@ function WorkIndexList({
                     </p>
                   </div>
                 </div>
-                <span
-                  className="text-gray-400 group-hover:text-gray-700 group-hover:translate-x-0.5 transition-all shrink-0"
+                <svg
+                  className="h-4 w-4 text-gray-400 group-hover:text-gray-700 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0 self-center"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   aria-hidden
                 >
-                  ↗
-                </span>
+                  <path d="M7 17L17 7M17 7H7M17 7v10" />
+                </svg>
               </Link>
             </li>
           );

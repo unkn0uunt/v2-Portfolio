@@ -65,16 +65,22 @@ const WorkExperience = () => {
                   {experience.dateStart} - {experience.dateEnd}
                 </p>
               </div>
-              <div
-                className={`text-gray-400 group-hover:text-gray-600 transition-all duration-300 ${
+              <svg
+                className={`h-4 w-4 shrink-0 text-gray-400 group-hover:text-gray-600 transition-all duration-300 ${
                   expandedExperience === experience.companyName
                     ? "rotate-90"
                     : ""
                 }`}
-                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden
               >
-                →
-              </div>
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
             </div>
             <AnimatePresence>
               {expandedExperience === experience.companyName && (
