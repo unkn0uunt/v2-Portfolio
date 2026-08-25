@@ -173,7 +173,7 @@ export const projects: Project[] = [
     projectDescription:
       "Discover and rent luxury cars, jets, yachts and experiences across Nigeria.",
     demoLink: "https://www.rentigram.com",
-    tools: ["MongoDB", "Expressjs", "React", "Node.js"],
+    tools: ["PostgreSQL", "Expressjs", "React", "Node.js"],
     category: "web",
     featured: true,
     year: "2026",
