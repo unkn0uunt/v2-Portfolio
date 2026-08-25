@@ -212,7 +212,7 @@ export const projects: Project[] = [
     projectDescription:
       "A full-stack e-commerce platform for product management, order processing, and customer support. Features a responsive React/TypeScript frontend with smooth animations and a Node.js/MongoDB backend.",
     demoLink: "https://rakels-fashion-house.vercel.app/",
-    tools: ["React", "TypeScript", "TailwindCSS", "Framer Motion", "Cloudinary"],
+    tools: ["PostgreSQL", "React", "TypeScript", "TailwindCSS", "Framer Motion", "Cloudinary"],
     category: "web",
     featured: true,
     year: "2026",
