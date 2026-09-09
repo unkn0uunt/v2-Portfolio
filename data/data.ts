@@ -3,6 +3,17 @@ import { JobExperience, Project } from "@/types/types";
 export const experiences: JobExperience[] = [
   {
     occupation: "Freelance Fullstack Developer",
+    companyName: "Acecore — Solar & PowerCell Energy Storage",
+    dateStart: "08/2026",
+    dateEnd: "Till Date",
+    responsibilities: [
+      `Shipped Acecore’s public product site from Figma — home, PowerCell product, pricing, about, team, and support — as a premium, conversion-focused experience for homes and businesses across Africa.`,
+      `Built PowerCell model comparison, solar vs storage pricing with instalment options, and a quote-request journey with live receipt preview that routes leads to certified installers.`,
+      `Delivered a motion-rich, fully responsive React frontend with reusable section architecture, ready to plug into lead capture, pricing data, and future sales without a rewrite.`,
+    ],
+  },
+  {
+    occupation: "Freelance Fullstack Developer",
     companyName: "Rentigram — Rent Luxury Cars, Jets & Yachts",
     dateStart: "08/2026",
     dateEnd: "Till Date",
@@ -165,6 +176,19 @@ export const projects: Project[] = [
   },
 
   // — Web (featured on homepage)
+  {
+    id: "acecore",
+    projectName: "Acecore",
+    projectImage:
+      "https://res.cloudinary.com/dznd7vzlb/image/upload/v1788961303/acecore_dqsma4.png",
+    projectDescription:
+      "Intelligent solar and PowerCell storage that keeps homes and businesses running through every outage.",
+    demoLink: "https://www.acecore.tech",
+    tools: ["React", "Vite", "Framer Motion", "React Router"],
+    category: "web",
+    featured: true,
+    year: "2026",
+  },
   {
     id: "rentigram",
     projectName: "Rentigram",

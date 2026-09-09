@@ -74,6 +74,16 @@ const toolConfig = {
     color: "bg-red-500",
     label: "React Router",
   },
+  "react router": {
+    Icon: SiReactrouter,
+    color: "bg-red-500",
+    label: "React Router",
+  },
+  reactrouter: {
+    Icon: SiReactrouter,
+    color: "bg-red-500",
+    label: "React Router",
+  },
   daisyui: { Icon: SiDaisyui, color: "bg-green-400", label: "DaisyUI" },
   unsplash: { Icon: SiUnsplash, color: "bg-black", label: "Unsplash" },
   sanity: { Icon: SiSanity, color: "bg-red-600", label: "Sanity" },
