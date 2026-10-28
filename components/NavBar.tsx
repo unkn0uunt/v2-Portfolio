@@ -52,10 +52,6 @@ export default function NavBar() {
     };
   }, [open]);
 
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
-
   return (
     <div
       className={cn(

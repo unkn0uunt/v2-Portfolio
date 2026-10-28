@@ -1,5 +1,10 @@
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 // Dynamic imports for better code splitting
 const Hero = dynamic(() => import("@/components/Hero"));

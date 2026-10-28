@@ -4,55 +4,22 @@ import React, { useEffect, useRef } from "react";
 const SVGLoader = () => {
   const loader = useRef<HTMLDivElement | null>(null);
   const path = useRef<SVGPathElement | null>(null);
-  const initialCurve = 200;
-  const duration = 600;
-  let start: number | undefined;
 
   useEffect(() => {
-    setPath(initialCurve);
-    setTimeout(() => {
-      requestAnimationFrame(animate);
-    }, 500);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    const initialCurve = 200;
+    const duration = 600;
+    let start: number | undefined;
+    let frameId: number;
 
-  const animate = (timestamp: number | undefined) => {
-    if (start === undefined) {
-      start = timestamp;
-    }
-    const elapsed = (timestamp as number) - (start as number);
-    const newCurve = easeOutQuad(elapsed, initialCurve, -200, duration);
-    setPath(newCurve);
+    const easeOutQuad = (time: number, from: number, change: number) =>
+      -change * (time / duration) * (time / duration - 2) + from;
 
-    if (loader.current)
-      loader.current.style.top =
-        easeOutQuad(elapsed, 0, -loaderHeight(), duration) + "px";
+    const loaderHeight = () => loader.current?.getBoundingClientRect().height ?? 0;
 
-    if (elapsed < duration) {
-      requestAnimationFrame(animate);
-    }
-  };
-  const easeOutQuad = (
-    time: number,
-    start: number,
-    end: number,
-    duration: number
-  ) => {
-    return -end * (time /= duration) * (time - 2) + start;
-  };
-  const loaderHeight = () => {
-    const loaderBounds = (
-      loader.current as HTMLElement | null
-    )?.getBoundingClientRect() || { height: 0 };
-
-    return loaderBounds.height;
-  };
-
-  const setPath = (curve: number) => {
-    const width = window.innerWidth;
-    const height = loaderHeight();
-    if (path.current) {
-      path.current.setAttributeNS(
+    const setPath = (curve: number) => {
+      const width = window.innerWidth;
+      const height = loaderHeight();
+      path.current?.setAttributeNS(
         null,
         "d",
         `M0 0
@@ -61,8 +28,31 @@ const SVGLoader = () => {
       Q${width / 2} ${height - curve} 0 ${height}
       L0 0`
       );
-    }
-  };
+    };
+
+    const animate = (timestamp: number) => {
+      start ??= timestamp;
+      const elapsed = timestamp - start;
+      setPath(easeOutQuad(elapsed, initialCurve, -200));
+
+      if (loader.current) {
+        loader.current.style.top =
+          easeOutQuad(elapsed, 0, -loaderHeight()) + "px";
+      }
+
+      if (elapsed < duration) frameId = requestAnimationFrame(animate);
+    };
+
+    setPath(initialCurve);
+    const timerId = window.setTimeout(() => {
+      frameId = requestAnimationFrame(animate);
+    }, 500);
+
+    return () => {
+      window.clearTimeout(timerId);
+      cancelAnimationFrame(frameId);
+    };
+  }, []);
 
   return (
     <div ref={loader} className={`w-full z-50 fixed h-[calc(100vh+200px)]`}>

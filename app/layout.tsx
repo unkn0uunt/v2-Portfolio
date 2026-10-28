@@ -6,6 +6,7 @@ import CursorInk from "@/components/CursorInk";
 import { Outfit } from "next/font/google";
 import SmoothScrolling from "@/components/SmoothScrolling";
 import type { Metadata, Viewport } from "next";
+import { siteUrl } from "@/lib/site-url";
 // import SVGLoader from "@/components/SVGloader";
 
 // Optimize font loading
@@ -35,26 +36,17 @@ const outfit = Outfit({
 //   preload: true,
 // });
 
-// const NowPlaying = dynamic(() => import("@/components/NowPlaying"), {
-//   loading: () => <div className="h-6 bg-slate-900" />,
-// });
-
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Triumph Anya-Nga - Software Engineer Portfolio",
   // verification: {
   //   google: "ltfOnPx-NMzt2vBROfh-jAQr5R-U7ynE-3t3kmMTJGo",
   // },
-  alternates: {
-    canonical: "/",
-    languages: {
-      "en-US": "/en-US",
-    },
-  },
   description:
     "Triumph Anya-Nga - Software Engineer Portfolio: Creating professional, scalable, and SEO-friendly websites that establishes a robust online presence for small businesses through innovative web solutions in Tech, AI, and digital innovation with hands-on experience building scalable web applications, APIs, integrating databases, and securing applications with modern authentication methods." 
     ,
@@ -155,7 +147,6 @@ export default function RootLayout({
 
       <body className="antialiased overflow-x-hidden bg-[#ebebf3]">
         {/* <SVGLoader/> */}
-        {/* <NowPlaying /> */}
         <CursorInk />
         <NavBar />
         <SocialRail />

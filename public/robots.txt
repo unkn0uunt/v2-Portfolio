@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://ayodejiatanda.vercel.app
-
-# Sitemaps
-Sitemap: https://ayodejiatanda.vercel.app/sitemap.xml

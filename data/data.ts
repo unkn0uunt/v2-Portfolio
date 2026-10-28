@@ -24,6 +24,17 @@ export const experiences: JobExperience[] = [
     ],
   },
   {
+    occupation: "Freelance Software Engineer",
+    companyName: "The Rock-DMT",
+    dateStart: "09/2026",
+    dateEnd: "Till Date",
+    responsibilities: [
+      `Architected and developed a multi-tenant collateral and financial management platform connecting banks, borrowers, and field operations through secure role-based workflows.`,
+    `Engineered contract financing, shipment tracking, inventory reconciliation, product releases, and receivables management with automated exposure calculations and auditable transaction records.`,
+    `Built scalable full-stack infrastructure using TypeScript, Cloudflare Workers, D1, and Drizzle ORM, implementing granular access controls, relational data models, and reliable end-to-end financial workflows.`,
+    ],
+  },
+  {
     occupation: "Freelance Fullstack Developer",
     companyName: "Rakel's Fashion House - Outfits for Women who dress to rule!",
     dateStart: "02/2026",
@@ -197,7 +208,20 @@ export const projects: Project[] = [
     projectDescription:
       "Discover and rent luxury cars, jets, yachts and experiences across Nigeria.",
     demoLink: "https://www.rentigram.com",
-    tools: ["PostgreSQL", "Expressjs", "React", "Node.js"],
+    tools: ["PostgreSQL", "Expressjs", "NextJS", "Node.js"],
+    category: "web",
+    featured: true,
+    year: "2026",
+  },
+  {
+    id: "dmt",
+    projectName: "The Rock-DMT",
+    projectImage:
+      "https://res.cloudinary.com/dznd7vzlb/image/upload/v1793114628/Screenshot_2026-10-27_at_4.23.33_PM_tuza9n.png",
+    projectDescription:
+      "The collateral portal for DMT",
+    demoLink: "https://dmt-collateral.com",
+    tools: ["PostgreSQL", "Expressjs", "NextJS", "Node.js"],
     category: "web",
     featured: true,
     year: "2026",
@@ -288,7 +312,7 @@ export const projects: Project[] = [
     projectDescription:
       "A financial management SaaS for African freelancers and small business owners. Simplifies income tracking, invoicing, and goal management with AI-assisted expense categorization.",
     demoLink: "https://sage-sync.vercel.app/",
-    tools: ["NextJS", "React", "TypeScript", "TailwindCSS", "Expressjs", "mongodb", "vercel", "render"],
+    tools: ["React", "TypeScript", "TailwindCSS", "Expressjs", "mongodb", "vercel", "render"],
     category: "web",
     year: "2025",
   },

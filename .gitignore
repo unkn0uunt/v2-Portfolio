@@ -18,9 +18,6 @@
 # data
 /docs
 
-# api
-/pages/api/spotify.ts
-
 # misc
 .DS_Store
 *.pem
