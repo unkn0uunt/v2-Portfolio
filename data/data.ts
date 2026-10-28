@@ -208,7 +208,7 @@ export const projects: Project[] = [
     projectDescription:
       "Discover and rent luxury cars, jets, yachts and experiences across Nigeria.",
     demoLink: "https://www.rentigram.com",
-    tools: ["PostgreSQL", "Expressjs", "NextJS", "Node.js"],
+    tools: ["PostgreSQL", "Hono", "NextJS", "Node.js", "Cloudflare"],
     category: "web",
     featured: true,
     year: "2026",
@@ -221,7 +221,7 @@ export const projects: Project[] = [
     projectDescription:
       "The collateral portal for DMT",
     demoLink: "https://dmt-collateral.com",
-    tools: ["PostgreSQL", "Expressjs", "NextJS", "Node.js"],
+    tools: ["PostgreSQL", "Hono", "NextJS", "Node.js", "Cloudflare"],
     category: "web",
     featured: true,
     year: "2026",
@@ -260,7 +260,7 @@ export const projects: Project[] = [
     projectDescription:
       "A full-stack e-commerce platform for product management, order processing, and customer support. Features a responsive React/TypeScript frontend with smooth animations and a Node.js/MongoDB backend.",
     demoLink: "https://rakels-fashion-house.vercel.app/",
-    tools: ["PostgreSQL", "React", "TypeScript", "TailwindCSS", "Framer Motion", "Cloudinary"],
+    tools: ["PostgreSQL", "Cloudflare",  "React", "TypeScript", "TailwindCSS", "Framer Motion", "Cloudinary"],
     category: "web",
     featured: true,
     year: "2026",
@@ -273,7 +273,7 @@ export const projects: Project[] = [
     projectDescription:
       "A corporate web platform for a petroleum trading and brokerage firm — product lines, supply programmes, leadership, and counterparty credentials.",
     demoLink: "https://wwwpetrochemoiltradingltd.com/",
-    tools: ["React", "TypeScript", "TailwindCSS"],
+    tools: ["React", "TypeScript", "TailwindCSS", "Cloudflare"],
     category: "web",
     featured: false,
     year: "2024",

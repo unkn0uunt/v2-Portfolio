@@ -25,6 +25,7 @@ import {
   SiSass,
   SiMongodb,
   SiCloudinary,
+  SiCloudflare,
   SiChakraui,
   SiShadcnui,
   SiRedux,
@@ -35,6 +36,7 @@ import {
   SiPostgresql,
   SiNestjs,
   SiFastapi,
+  SiHono,
   SiBun,
   SiNodedotjs,
 } from "react-icons/si";
@@ -102,6 +104,7 @@ const toolConfig = {
   sass: { Icon: SiSass, color: "bg-pink-500", label: "Sass" },
   mongodb: { Icon: SiMongodb, color: "bg-green-600", label: "MongoDB" },
   cloudinary: { Icon: SiCloudinary, color: "bg-blue-500", label: "Cloudinary" },
+  cloudflare: { Icon: SiCloudflare, color: "bg-orange-500", label: "Cloudflare" },
   chakraui: { Icon: SiChakraui, color: "bg-teal-600", label: "Chakra UI" },
   shadcnui: { Icon: SiShadcnui, color: "bg-gray-900", label: "shadcn/ui" },
   redux: { Icon: SiRedux, color: "bg-purple-700", label: "Redux" },
@@ -117,6 +120,7 @@ const toolConfig = {
   postgresql: { Icon: SiPostgresql, color: "bg-blue-700", label: "PostgreSQL" },
   nestjs: { Icon: SiNestjs, color: "bg-red-600", label: "NestJS" },
   fastapi: { Icon: SiFastapi, color: "bg-teal-600", label: "FastAPI" },
+  hono: { Icon: SiHono, color: "bg-orange-600", label: "Hono" },
   bunjs: { Icon: SiBun, color: "bg-amber-400 text-black", label: "Bun" },
   bun: { Icon: SiBun, color: "bg-amber-400 text-black", label: "Bun" },
 };
